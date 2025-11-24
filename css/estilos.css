@@ -1,0 +1,302 @@
+/* ===== Layout base: sticky footer con Flex ===== */
+html, body { height: 100%; }
+body {
+  margin: 0;                 /* quita margen por defecto */
+  min-height: 100svh;        /* 100% alto de viewport, respetando barras móviles */
+  display: flex;
+  flex-direction: column;    /* hijos verticales: header (include), main, footer (include) */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #222;
+  background-color: #faf3e0;
+}
+
+a {
+  color: #8b4513;
+  text-decoration: none;
+}
+
+/* La zona de contenido crece y empuja el footer hacia abajo */
+main {
+  flex: 1 0 auto;            /* <- CLAVE para sticky footer */
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+}
+
+/* Header y footer (inyectados) no crecen */
+[data-include][role="contentinfo"],
+.hero {                       /* .hero viene del header.html */
+  flex: 0 0 auto;
+}
+
+/* Tipografía de la página */
+h1.page-title {
+  text-align: center;         /* <- centrado del título */
+  margin: 1.5rem 0 1rem;
+  font-size: clamp(1.6rem, 2vw + 1rem, 2.2rem);
+  font-weight: 700;
+}
+
+/* Links del contenido */
+main a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* Detalle visual muy sutil */
+hr.line {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 1rem 0;
+}
+
+/* ===== FanPage Isra ===== */
+.FanPageIsra {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,.05);
+}
+.FanPageIsra h1 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.FanPageIsra h2 { margin-top: 1rem; font-size: 1.2rem; }
+
+/* ===== Servicios ===== */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+.servicios-grid article {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.servicios-grid article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+.servicios-grid img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: .75rem;
+}
+.servicios-grid h3 { margin-bottom: .5rem; }
+
+/* ===== Contacto ===== */
+.contact-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+.contact-card h2 { margin-bottom: 1rem; }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: .5rem .75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+}
+.contact-form button {
+  background: #8b4513;     /* marrón tostado */
+  color: #fff;
+  border: none;
+  padding: .6rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s;
+}
+.contact-form button:hover {
+  background: #5c2e0e;
+}
+
+.contact-info {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* ===== Frases ===== */
+.frases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.frase-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-style: italic;
+  text-align: center;
+}
+
+.frase-card span {
+  margin-top: .75rem;
+  font-style: normal;
+  font-size: .9rem;
+  color: #555;
+}
+
+/* ===== Footer nuevo ===== */
+.site-footer {
+  background: #222;
+  color: #eee;
+  padding: 2rem 1rem 1rem;
+  margin-top: 2rem;
+}
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+.footer-about h3 {
+  margin-bottom: .5rem;
+}
+.footer-nav a {
+  display: block;
+  margin: .25rem 0;
+  color: #ddd;
+  text-decoration: none;
+}
+.footer-nav a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.footer-social a {
+  margin-right: .5rem;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: #ddd;
+}
+.footer-social a:hover {
+  color: #fff;
+}
+.footer-copy {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: .85rem;
+  color: #aaa;
+}
+
+/* ===== Header ===== */
+.hero {
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  background: transparent;   /* se ve el fondo beige */
+}
+.hero-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: .75rem 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: .75rem;
+}
+.hero-logo {
+  text-decoration: none;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+}
+.hero-logo-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid #111;
+  font-weight: 700;
+}
+.hero-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #5c2e0e;  /* marrón que combina con el beige */
+}
+.hero-nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.hero-nav a {
+  text-decoration: none;
+  color: #8b4513;  /* marrón tostado */
+  padding: .25rem .5rem;
+  border-radius: .5rem;
+  transition: background .2s, color .2s;
+}
+.hero-nav a:hover {
+  background: rgba(0,0,0,.05);
+}
+.hero-nav a[aria-current="page"],
+.hero-nav a.is-active {
+  color: #5c2e0e;
+  font-weight: 700;
+  text-decoration: underline;
+}
+/* Enlace de salto accesible */
+.hero-skip {
+  position: absolute;
+  left: -9999px;
+}
+.hero-skip:focus {
+  position: static;
+  padding: .25rem .5rem;
+  background: #000;
+  color: #fff;
+  border-radius: .25rem;
+  margin: .25rem 1rem;
+  display: inline-block;
+}
+/* Burger menú (responsive) */
+.hero-burger {
+  display: none;
+  user-select: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: .25rem .5rem;
+}
+.hero-toggle { display: none; }
+@media (max-width: 720px) {
+  .hero-nav ul {
+    flex-direction: column;
+    gap: .5rem;
+    margin-top: .5rem;
+  }
+  .hero-burger { display: inline-block; }
+  .hero-nav { display: none; }
+  .hero-toggle:checked ~ .hero-nav { display: block; }
+}

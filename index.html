@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inicio - Mi Proyecto Web</title>
+  <link rel="stylesheet" href="css/estilos.css"/>
+  <link rel="icon" href="Image/mero.jpeg">
+</head>
+<body>
+  <!-- Header reutilizable -->
+  <div data-include="componentes/header.html"></div>
+
+  <main id="contenido">
+    <h1 class="page-title">Página de Inicio</h1>
+
+    <p><a href="contacto.html">Jalas?</a></p>
+    <p>Bienvenido a la FanPage de Isra.</p>
+  </main>
+
+  <section class="FanPageIsra" id="FanPage">
+    <h1>El mero mero</h1>
+    <div class="Fan-Page">
+      <article>
+        <h2>Página de fans de Isra</h2>
+        <p>Bienvenid@ a la página de fans de Isra, donde celebramos su grandeza y carisma. Aquí encontrarás todo lo relacionado con Isra, desde sus logros hasta sus momentos más memorables. ¡Únete a nosotros para compartir tu admiración por Isra!
+        </p>
+        <article>
+          <h3>Logros de Isra</h3>
+          <ul>
+            <li>Ganador del premio al "Mejor Amigo" en 2025.</li>
+            <li>Reconocido por su sentido del humor único.</li>
+            <li>Inspiración para muchos con su actitud positiva.</li>
+          </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="Servicios" id="servicios"></section>
+  <h3>Servicios que ofrece</h3>
+  <div class="servicios-grid">
+    <article>
+      <img src="Image/2.jpeg" alt="Servicios" width="300">
+      <h3>Tatuajes</h3>
+      <p>Volví a casa y sólo me dejaron un taquito para cenar.</p>
+    </article>
+    <article>
+      <img src="Image/3.jpeg" alt="Servicios" width="300">
+      <h3>Asesorías</h3>
+      <p>Te doy una asesoría de cómo faltar a clase y no sentir culpa.</p>
+    </article>
+    <article>
+      <img src="Image/5.jpeg" alt="Servicios" width="300">
+      <h3>Clases de Baile</h3>
+      <p>Aprende a bailar como Isra en sólo 5 sesiones.</p>
+    </article>
+    <article>
+      <img src="Image/1.jpeg" alt="Servicios" width="300">
+      <h3>Comida Casera</h3>
+      <p>Aprende a hacer guacamole en 5 minutos.</p>
+    </article>
+  </div>
+
+  <!-- Footer reutilizable -->
+  <div data-include="componentes/footer.html" role="contentinfo" aria-label="Pie de página"></div>
+
+  <script type="module" src="js/includes.js"></script>
+  <script type="module" src="js/index.js"></script>
+</body>
+</html>
